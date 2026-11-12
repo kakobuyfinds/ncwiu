@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>HipoBuy spreadsheet | Productlinks, maten en QC-foto’s</title>
+<meta name="description" content="Gebruik de HipoBuy spreadsheet als koopgids. Bekijk tien modecategorieën en leer hoe je productlinks, maten, QC-foto’s en verzendkosten vergelijkt.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="HipoBuy spreadsheet | Productlinks, maten en QC-foto’s">
+<meta property="og:description" content="Bekijk tien modecategorieën en controleer de uitvoering, pasvorm en verzendkosten voordat je bestelt.">
+<meta name="theme-color" content="#202a36">
+<style>
+:root{color-scheme:light;--ink:#202a36;--muted:#495561;--paper:#f6f3ec;--white:#fffdf9;--line:#d6cec1;--accent:#953b28}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid #ac5a2e;outline-offset:4px}
+.wrap{width:min(100% - 2rem,72rem);margin-inline:auto}
+header,footer{background:var(--ink);color:white;padding:1rem 0}
+header a{font-weight:750;text-decoration:none;letter-spacing:.07em}
+main{padding:1.5rem 0 3.5rem}
+.hero{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border:1px solid var(--line)}
+.intro{padding:clamp(1.25rem,5vw,4rem);align-self:center}
+h1,h2,h3{line-height:1.13;margin:0 0 .75rem}
+h1,h2{font-family:Georgia,serif}
+h1{font-size:clamp(2.5rem,6vw,5.4rem);letter-spacing:-.055em}
+h2{font-size:clamp(1.8rem,4vw,3rem)}
+p{margin:.55rem 0 1rem}
+.hero figure,figure{margin:0}
+.hero figure{display:grid;grid-template-rows:1fr auto;background:#e4dfd7}
+img{display:block;width:100%;height:auto;object-fit:cover}
+.hero img{height:100%;aspect-ratio:4/3;object-position:center}
+figcaption{padding:.45rem .85rem;font-size:.875rem;color:var(--muted)}
+.button{display:inline-block;background:var(--accent);color:white;padding:.7rem 1rem;text-decoration:none;font-weight:700}
+.button:hover{background:#742c1d}
+section,nav{margin-top:2.4rem}
+.categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.categories a{display:flex;align-items:center;justify-content:space-between;gap:.4rem;min-height:4rem;padding:.65rem .8rem;background:var(--white);border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;font-weight:650}
+.categories a:hover{background:#f0ddd0;text-decoration:underline}
+.gallery,.articles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.gallery figure,.articles article{background:var(--white);border:1px solid var(--line)}
+.gallery img{aspect-ratio:4/3;object-fit:contain;background:#ede9e1}
+.articles article{padding:1.2rem}
+.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 2rem;margin:0;padding-left:1.5rem}
+.checklist li{padding:.65rem 0;border-bottom:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:.85rem 0}
+summary{cursor:pointer;font-weight:700}
+details p{max-width:72ch}
+footer p{margin:.5rem 0}
+@media(max-width:52rem){.categories{grid-template-columns:repeat(2,minmax(0,1fr))}.articles{grid-template-columns:1fr}}
+@media(max-width:40rem){.hero,.checklist{grid-template-columns:1fr}.hero img{height:auto;aspect-ratio:16/10}.gallery{grid-template-columns:1fr 1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "HipoBuy spreadsheet",
+      "description": "Nederlandstalige koopgids voor productlinks, kledingmaten, QC-foto’s en verzendkosten.",
+      "inLanguage": "nl"
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "nl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat is een HipoBuy spreadsheet?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Een HipoBuy spreadsheet is een verzameloverzicht van productlinks dat je gebruikt om artikelen te vinden en te vergelijken. De categorieën op deze pagina openen CAFANS."}
+        },
+        {
+          "@type": "Question",
+          "name": "Welke schoenmaat kies ik als de maattabel afwijkt?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Meet beide voeten en gebruik de lengte van je langste voet. Controleer of de tabel voetlengte of binnenzoollengte aangeeft en vraag bij twijfel om een meting van de gekozen maat."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kan ik met QC-foto’s controleren?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Vergelijk de ontvangen uitvoering met je bestelling en bekijk zichtbare details zoals naden, bedrukking en sluitingen. Vraag een extra foto als een belangrijk detail ontbreekt. Een foto alleen bewijst de echtheid van een merkartikel niet."}
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe vergelijk ik de verzendkosten naar Nederland of België?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Vergelijk offertes voor hetzelfde afleveradres en dezelfde pakketinhoud. Let op pakketgewicht, volumetrisch gewicht, verpakking en eventuele bijkomende kosten. Gebruik de actuele offerte van je vervoerder of aankoopdienst."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ncwiu/">
+</head>
+<body>
+<header><div class="wrap"><a href="https://www.cafans.com">CAFANS.COM</a></div></header>
+<main class="wrap">
+  <div class="hero">
+    <div class="intro">
+      <h1>HipoBuy spreadsheet</h1>
+      <p>Begin bij een categorie op CAFANS. Gebruik deze koopgids om productlinks te vergelijken, de juiste maat te kiezen en te bepalen welke details je op QC-foto’s wilt zien.</p>
+      <a class="button" href="https://www.cafans.com">Bekijk CAFANS</a>
+    </div>
+    <figure>
+      <img src="https://cdn.whatsonthestar.com/uploads/1640444373240.jpeg" width="800" height="600" fetchpriority="high" alt="Zittend model in een Louis Vuitton-monogramoutfit met witte Nike Air Force 1-sneakers">
+      <figcaption>Stijlinspiratie met Louis Vuitton en Nike</figcaption>
+    </figure>
+  </div>
+
+  <nav aria-labelledby="categorieen">
+    <h2 id="categorieen">Shop per categorie</h2>
+    <ul class="categories">
+      <li><a href="https://cafans.com/category-911-Shoes.html">Schoenen <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hoodies en truien <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-914-Jackets.html">Jassen <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-915-Pants%2FShorts.html">Broeken en shorts <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-916-Headwear.html">Hoofddeksels <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-917-Sets.html">Sets <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-918-underwear%2Funderpants.html">Ondergoed <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-919-Jersey.html">Sportshirts <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://cafans.com/category-920-Accessories.html">Accessoires <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+
+  <section aria-labelledby="shortlist">
+    <h2 id="shortlist">Van productlink naar shortlist</h2>
+    <p>Noteer per artikel de productlink, de naam van de aanbieder, de gewenste kleur en de maat. Controleer op de actuele productpagina of de gekozen variant op voorraad is. Open je een Weidian-, Taobao- of 1688-link via een aankoopdienst, controleer dan of daar dezelfde uitvoering verschijnt.</p>
+    <ul class="checklist">
+      <li><strong>Sneakers.</strong> Controleer voetlengte in centimeters, breedte bij de voorvoet en de lengte van de binnenzool.</li>
+      <li><strong>Hoodies en T-shirts.</strong> Vergelijk borstbreedte, schouderbreedte, mouwlengte en ruglengte met een kledingstuk dat goed zit.</li>
+      <li><strong>Jassen en broeken.</strong> Controleer de voering van de jas, de taillewijdte en de binnenbeenlengte van de broek.</li>
+      <li><strong>Petten en sieraden.</strong> Meet de hoofdomtrek of polsomtrek en controleer het verstelbereik, het materiaal en de sluiting.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="inspiratie">
+    <h2 id="inspiratie">Stijlinspiratie</h2>
+    <div class="gallery">
+      <figure>
+        <img src="https://cdn.whatsonthestar.com/uploads/1650052311596.jpeg" width="480" height="360" loading="lazy" decoding="async" alt="Model in een geel trainingspak met een Gucci-pet en witte Nike-sneakers">
+        <figcaption>Gucci-pet met sportieve laagjes</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.fashionphile.com/cdn/shop/files/806cb5d71bdc48a7e90b22c3cba49bd0.jpg?width=480" width="480" height="360" loading="lazy" decoding="async" alt="Dior Teddy-D-vissershoed met Oblique-patroon">
+        <figcaption>Dior Teddy-D-vissershoed</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.crepslocker.com/cdn/shop/files/hermes-paris-clic-h-black-bracelet-h700001fv01pm-front.webp?v=1716898801&amp;width=480" width="480" height="360" loading="lazy" decoding="async" alt="Zwarte Hermès Clic H-armband met goudkleurige H-sluiting">
+        <figcaption>Hermès Clic H-armband</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="koopgids">
+    <h2 id="koopgids">Koopgids voor maten, QC en verzending</h2>
+    <div class="articles">
+      <article>
+        <h3>Zo lees je een maattabel</h3>
+        <p>Leg een goed passend shirt plat neer en meet van oksel tot oksel. Kijk vervolgens of de maattabel de platte borstbreedte of de volledige borstomtrek geeft. Wil je een hoodie onder een jas dragen, meet dan een jas die over die hoodie past.</p>
+      </article>
+      <article>
+        <h3>Welke QC-foto’s heb je nodig?</h3>
+        <p>Vraag bij sneakers om een foto van beide zolen en een foto van de maatlabels. Bij een sportshirt met bedrukking helpt een close-up van de print en de naden. Laat een onduidelijk detail opnieuw fotograferen voordat je de zending goedkeurt.</p>
+      </article>
+      <article>
+        <h3>Bereken de totale kosten van je pakket</h3>
+        <p>Tel de artikelprijs, binnenlandse bezorging, servicekosten en internationale verzending op. Vraag ook naar eventuele invoer- en afhandelingskosten. Vergelijk het pakket met en zonder schoenendoos als de vervoerder op volume rekent en je de doos kunt missen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq">
+    <h2 id="faq">Veelgestelde vragen</h2>
+    <details open>
+      <summary>Wat is een HipoBuy spreadsheet?</summary>
+      <p>Een HipoBuy spreadsheet is een verzameloverzicht van productlinks dat je gebruikt om artikelen te vinden en te vergelijken. De categorieën op deze pagina openen CAFANS.</p>
+    </details>
+    <details>
+      <summary>Welke schoenmaat kies ik als de maattabel afwijkt?</summary>
+      <p>Meet beide voeten en gebruik de lengte van je langste voet. Controleer of de tabel voetlengte of binnenzoollengte aangeeft en vraag bij twijfel om een meting van de gekozen maat.</p>
+    </details>
+    <details>
+      <summary>Wat kan ik met QC-foto’s controleren?</summary>
+      <p>Vergelijk de ontvangen uitvoering met je bestelling en bekijk zichtbare details zoals naden, bedrukking en sluitingen. Vraag een extra foto als een belangrijk detail ontbreekt. Een foto alleen bewijst de echtheid van een merkartikel niet.</p>
+    </details>
+    <details>
+      <summary>Hoe vergelijk ik de verzendkosten naar Nederland of België?</summary>
+      <p>Vergelijk offertes voor hetzelfde afleveradres en dezelfde pakketinhoud. Let op pakketgewicht, volumetrisch gewicht, verpakking en eventuele bijkomende kosten. Gebruik de actuele offerte van je vervoerder of aankoopdienst.</p>
+    </details>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <a href="https://www.cafans.com">CAFANS.COM</a>
+    <p>Onafhankelijke koopgids. De merkfoto’s dienen als stijlinspiratie.</p>
+  </div>
+</footer>
+</body>
+</html>
